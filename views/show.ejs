@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <%- include('partials/head'); %>
+  <body>
+    <%- include('partials/header'); %>
+    <main>
+        <% books.forEach((book) => { %>
+        <p id = "currentBook">
+          <button id= "goBack" onclick="window.history.back()">Go Back</button>
+          <span>Book Number: <%= book.id %> </span>
+          <button id= "nextBook" onclick='location.href="/books/<%= book.id +1 %>"'>Next Book!</button>
+        </p>
+        <ul id = books>
+            <li>
+              <img id = "book_img" src= "<%= book.image_url %>"/>
+             <b><%= book.title%></b> <br>
+              <em><%= book.author%> </em><br>
+              <!-- <button id = "viewDetailsButton" onclick="$('#viewDetailsButton').hide(), $('#details').show(), $('#isbn').show();"> View Details</button> -->
+              <p id= "details"><%= book.description %> </p>
+              <span id = "isbn"><%= book.isbn %></span>
+              <% }); %>
+            </li>
+        </ul>
+    </main>
+    <%- include('partials/footer') %>
+  </body>
+</html>
