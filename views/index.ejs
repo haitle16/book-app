@@ -1,45 +1,23 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/styles/app.css">
-        <link rel="stylesheet" href="/styles/icons.css">
-        <link rel="stylesheet" href="/styles/normalize.css">
-        <title>Books App</title>
-    </head>
-    <body>
-        <header class = "header">
-            <h1 id= "booksApp">Books App</h1>
-            <nav>
-                <div class="icon-menu"></div>
-                <ul>
-                <li><a href="/books" class="icon-home"> Home</a></li>
-                <li><a href="/books" class="icon-rocket"> Saved Books</a></li>
-                <li><a href="/404" class="icon-plus"> Add a Book</a></li>
-                <li><a href="/ping" class="icon-address-book"> Search Books</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <h4>Count: <%= books.length %></h4>
-            <ul id = books>
-                <% books.forEach((book) => { %>
-                <li>
-                  <img id = "book_img" src= "<%= book.image_url %>"/>
-                 <b><%= book.title%></b> <br>
-                  <em><%= book.author%> </em><br>
-                  <!-- <button id = "viewDetailsButton" onclick="$('#viewDetailsButton').hide(), $('#details').show(), $('#isbn').show();"> View Details</button> -->
-                 <!-- <button  id = "viewDetailsButton" onclick='location.href="/books/<%= book.id %>"' >View Details </button> -->
-                  <!-- <p id= "details"><%= book.description %> </p> -->
-                  <!-- <em id = "isbn"><%= book.isbn %></em> -->
-                  <% }); %>
-                </li>
-            </ul>
-        </main>
-        <footer>
-            <p>&copy; 2018 Code Fellows</p>
-        </footer>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    </body>
+    <%- include('partials/head'); %>
+  <body>
+    <%- include('partials/header'); %>
+    <main>
+        <h4>Count: <%= books.length %></h4>
+        <ul id = books>
+            <% books.forEach((book) => { %>
+            <li>
+              <img id = "book_img" src= "<%= book.image_url %>"/>
+             <b><%= book.title%></b> <br>
+              <em><%= book.author%> </em><br>
+             <button  id = "viewDetailsButton" onclick='location.href="/books/<%= book.id %>"' >View Details </button>
+              <!-- <p id= "details"><%= book.description %> </p> -->
+              <!-- <em id = "isbn"><%= book.isbn %></em> -->
+              <% }); %>
+            </li>
+        </ul>
+    </main>
+    <%- include('partials/footer') %>
+  </body>
 </html>
