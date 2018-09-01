@@ -1,0 +1,119 @@
+head{
+    background-color: black;
+}
+/* 404 styling */
+#a404{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+#container {
+    height:100%;
+}
+
+footer {
+    display: block;
+    bottom: 0;
+    width: 100%;
+    height: 40px;   /* Height of the footer */
+    text-align: center;
+}
+#booksApp{
+    color: rgb(207, 207, 207);
+}
+
+.header{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#book_img{
+    /* box-sizing: content-box; */
+    width: 195px;
+    height: 290px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    /* padding-top: 20px; */
+    border: solid 4px white;
+    margin-bottom: 5px;
+}
+
+#viewDetailsButton{
+    width: 170px;
+    height: 55px;
+    color:white;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    margin-top: 35px;
+}
+
+#books li{
+    margin: auto;
+    list-style: none;
+    width: 375px;
+    height: 500px;
+    background-color: rgb(179, 175, 175);
+    margin-bottom: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    padding-top: 20px;
+}
+#details{
+    background-color: rgb(206, 204, 204);
+    margin: auto ;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 110px;
+    overflow: auto;
+    font-size: 16px;
+    line-height: 24px;
+    font-style: italic;
+    /* display:none; */
+}
+
+#goBack{
+    margin-left: 40px;
+}
+
+#currentBook button{
+    width: 100px;
+    height: 50px;
+}
+/* need to work on the span below for 10+ numbers */
+#currentBook span{
+    margin: auto 26px;
+}
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+#create-form{
+    margin: auto;
+    width: 375px;
+    height: 500px;
+    text-align: center;
+}
+
+#create-form input{
+    margin-top: 25px;
+    width: 325px;
+    height: 30px;
+}
+#create-form textarea{
+    margin-top: 25px;
+    width: 325px;
+    height: 100px;
+}
+#create-form button{
+    margin-top: 25px;
+    width: 170px;
+    height: 55px;
+    color:white;
+    background-color: black;
+    border: none;
+}
+h4{
+    text-align: left;
+}

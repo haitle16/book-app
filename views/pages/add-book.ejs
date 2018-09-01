@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <%- include('../partials/head'); %>
+  <body>
+    <%- include('../partials/header'); %>
+    <h5>Add a New Book</h5>
+    <main>
+        <form id="create-form" action="/addabook" method="post">
+          <input type="text" name="title" placeholder="Title"> <br>
+          <input type="text" name="author" placeholder="Author"> <br>
+          <input type="text" name="isbn" placeholder="ISBN"> <br>
+          <input type="text" name="image_url" placeholder="Image URL"> <br>
+          <textarea name="description" placeholder="Description"></textarea> <br>
+          <button type="submit">Submit</button>
+        </form>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

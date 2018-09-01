@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <%- include('../partials/head'); %>
+  <body>
+    <%- include('../partials/header'); %>
+    <h5>Book Added</h5>
+    <main>
+        <p>This book have been successfully added to the database</p>
+        <p><img src= "<%= books.image_url %>"/></p>
+        <p><b><%= books.title%></b></p>
+        <p><em><%= books.author%> </em></p>
+        <p><em id = "isbn"><%= books.isbn %></em></p>
+
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>
