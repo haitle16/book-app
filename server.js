@@ -2,6 +2,7 @@
 require('dotenv').config();
 const express = require('express');
 const pg = require('pg');
+const superagent = require('superagent')
 
 // Application Setup
 const app = express();
@@ -26,8 +27,12 @@ app.get('/ping', (request, response) => { response.send('pong')});
 app.get('/', (req, res) =>{ res.redirect('/books')});
 app.get('/books', myBooks);
 app.get('/books/:id', showBookDetails);
+
 app.get('/addabook', addPage);
 app.post('/addabook', addaBook)
+
+app.get('/searchpage', renderSearch)
+app.post('/searchmethod', searchEngine)
 
 app.get('*', (request, response) => response.render('pages/error', {}));
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
@@ -55,12 +60,12 @@ function showBookDetails(req, res) {
         // res.send(results.rows);
         console.log(req.params.id);
         // console.log(results);
-        res.render('pages/show', {books: results.rows});
+        res.render('pages/books/show', {books: results.rows});
     })
 }
 
 function addPage (req, res) {
-    res.render('pages/add-book');
+    res.render('pages/books/add-book');
 }
 
 function addaBook (req, res) {
@@ -70,11 +75,20 @@ function addaBook (req, res) {
     return client.query(SQL, values)
     // .then(res.redirect('/'))
     .then(
-        res.render('pages/add-book-confirm', {books: req.body} )
+        res.render('pages/books/add-book-confirm', {books: req.body} )
     )
     .catch(err => handleError(err, res));
 
 }
+
+function renderSearch (req, res) {
+    res.render('pages/searches/bookSearch');
+}
+
+function searchEngine (req,res) {
+
+}
+
 function handleError(error, response) {
   response.render('pages/error', {error: error});
 }
