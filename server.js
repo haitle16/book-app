@@ -86,6 +86,28 @@ function renderSearch (req, res) {
 }
 
 function searchEngine (req,res) {
+    let url = 'https://www.googleapis.com/books/v1/volumes';
+    let query = ''
+    let modifiedRequest = req.body.search[0].split(' ').join('+');
+    if (req.body.search[1] === 'title') query += `+intitle:${modifiedRequest}`;
+    if (req.body.search[1] === 'author') query += `+inauthor:${modifiedRequest}`;
+    superagent(url).query({'q': query})
+    .then(apiResponse => apiResponse.body.items.map(bookResult => {
+        let { title, subtitle, authors, industryIdentifiers, imageLinks, description } = bookResult.volumeInfo;
+        let imgNotFound = 'https://cdn.browshot.com/static/images/not-found.png';
+
+        return {
+            title: title ? title : 'No title available',
+            subtitle: subtitle ? subtitle : '',
+            author: authors ? authors[0] : 'No authors available',
+            isbn: industryIdentifiers ? `ISBN_13 ${industryIdentifiers[0].identifier}` : 'No ISBN available',
+             // need to change this conditon
+            image_url: imageLinks ? imageLinks.smallThumbnail : imgNotFound,
+            description: description ? description : 'No description available'
+          };
+
+    })).then (bookInfo => res.render('pages/searches/showSearch', {results: bookInfo}))
+    .catch (err => handleError(err,res));
 
 }
 

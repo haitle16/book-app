@@ -43,7 +43,7 @@ footer {
 }
 
 #viewDetailsButton{
-    width: 170px;
+    width: 200px;
     height: 55px;
     color:white;
     background-color: black;
@@ -141,3 +141,19 @@ fieldset {
     color: #444;
     border-radius: 3px;
 }
+#booksearch{
+    margin: auto;
+    list-style: none;
+    width: 375px;
+    height: 600px;
+    background-color: rgb(179, 175, 175);
+    margin-bottom: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    padding-top: 20px;
+    padding-right: 40px;
+}
+
+#hide-me input, #hide-me textarea {
+    display: none;
+  }
