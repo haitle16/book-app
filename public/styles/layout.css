@@ -43,7 +43,7 @@ footer {
 }
 
 #viewDetailsButton{
-    width: 170px;
+    width: 200px;
     height: 55px;
     color:white;
     background-color: black;
@@ -106,7 +106,7 @@ footer {
     width: 325px;
     height: 100px;
 }
-#create-form button{
+#create-form button, #search-form button{
     margin-top: 25px;
     width: 170px;
     height: 55px;
@@ -117,3 +117,43 @@ footer {
 h4{
     text-align: left;
 }
+#search-form {
+    margin: auto;
+    width: 375px;
+    height: 500px;
+    text-align: center;
+}
+#searchbox{
+    margin-top: 25px;
+    width: 365px;
+    height: 40px;
+}
+fieldset {
+
+    /* float: left; */
+    margin-top: 30px;
+    /* box-sizing: border-box; */
+    /* margin-bottom: 30px; */
+    /* margin-left: 5vw; */
+    /* padding: 2vw 5vw 2vw 0vw; */
+    text-align: center;
+    background: #ccc;
+    color: #444;
+    border-radius: 3px;
+}
+#booksearch{
+    margin: auto;
+    list-style: none;
+    width: 375px;
+    height: 600px;
+    background-color: rgb(179, 175, 175);
+    margin-bottom: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    padding-top: 20px;
+    padding-right: 40px;
+}
+
+#hide-me input, #hide-me textarea {
+    display: none;
+  }

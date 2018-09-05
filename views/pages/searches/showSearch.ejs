@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <%- include('../../partials/head'); %>
+  <body>
+    <%- include('../../partials/header'); %>
+    <main>
+        <h5>Search Results</h5>
+        <% results.forEach((book) => { %>
+        <ul id = booksearch>
+            <li>
+              <img id = "book_img" src= "<%= book.image_url %>"/>
+             <b><%= book.title%></b> <br>
+              <em><%= book.author%> </em><br>
+              <p id= "details"><%= book.description %> </p>
+              <span id = "isbn"><%= book.isbn %></span> <br>
+              <form id="hide-me" action="/addabook" method="post">
+                <input type="text" name="title" value="<%= book.title %>">
+                <input type="text" name="author" value="<%= book.author %>">
+                <input type="text" name="isbn" value="<%= book.isbn %>">
+                <input type="text" name="image_url" value="<%= book.image_url %>">
+                <textarea name="description" cols="30" rows="5"><%= book.description %></textarea>
+                <button id = "viewDetailsButton"type="submit">Add to Database</button>
+              </form>
+            </li>
+        </ul>
+        <% }); %>
+    </main>
+    <%- include('../../partials/footer') %>
+  </body>
+</html>
+

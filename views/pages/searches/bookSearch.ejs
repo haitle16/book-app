@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <%- include('../../partials/head'); %>
+  <body>
+    <%- include('../../partials/header'); %>
+    <h5>Search by Title or Author</h5>
+    <main>
+        <form id="search-form" action="/searchmethod" method="post">
+        <input id = "searchbox" type="text" name="search" placeholder="Enter a Title or Author " required>
+        <fieldset>
+            <label for="title">
+                <span>Title</span>
+                <input type="radio" id = "title" name="search" value="title" required>
+            </label>
+        </fieldset>
+        <fieldset>
+            <label for="author">
+                <span>Author</span>
+                <input type="radio" id = "author" name="search" value="author" required>
+            </label>
+        </fieldset>
+
+        <button type="submit">Search Goggle API</button>
+        </form>
+    </main>
+    <%- include('../../partials/footer') %>
+  </body>
+</html>
